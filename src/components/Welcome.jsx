@@ -30,7 +30,6 @@ const setupTextHover = (container, type) => {
   }
 
   const hanldeMouseMove = (e) => {
-    console.log("asda");
     const { left } = container.getBoundingClientRect();
     const mouseX = e.clientX - left;
 
@@ -79,7 +78,7 @@ const Welcome = () => {
       </h1>
 
       <div className="small-screen">
-        <p>This Portfolio is designed for desktop/tabled screens only.</p>
+        <p>This Portfolio is designed for desktop/tablet screens only.</p>
       </div>
     </section>
   )
