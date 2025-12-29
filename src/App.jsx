@@ -1,9 +1,9 @@
-import { Navbar, Welcome, Dock } from '#components/import.js'
+import { Navbar, Welcome, Dock } from '#components/import.js';
 import gsap from 'gsap';
-import { Resume, Safari, TerminalWindow } from "#windows/import"
+import { Resume, Safari, TerminalWindow } from "#windows/import";
 
 import { Draggable } from 'gsap/Draggable';
-gsap.registerPlugin(Draggable)
+gsap.registerPlugin(Draggable);
 
 
 const App = () => {

@@ -1,4 +1,4 @@
-import useWindowStore from "#store/window"
+import useWindowStore from "#store/window";
 
 const WindowControls = ({ target }) => {
 
@@ -13,4 +13,4 @@ const WindowControls = ({ target }) => {
   )
 }
 
-export default WindowControls
+export default WindowControls;

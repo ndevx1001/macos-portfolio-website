@@ -1,11 +1,11 @@
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { useRef } from "react"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 400, default: 100 },
   title: { min: 400, max: 900, default: 400 }
-}
+};
 
 const renderText = (text, className, baseWeight = 400) => {
   return [...text].map((char, i) => (
@@ -17,17 +17,17 @@ const renderText = (text, className, baseWeight = 400) => {
         { char === " " ? '\u00A0' : char }
     </span>
   ))
-}
+};
 
 const setupTextHover = (container, type) => {
   if(!container) return;
 
   const letters = container.querySelectorAll("span");
-  const { min, max, default: base } = FONT_WEIGHTS[type]
+  const { min, max, default: base } = FONT_WEIGHTS[type];
 
   const animateLetters = (letter, weight, duration = 0.25) => {
     return gsap.to(letter, { duration, ease: "power2.out", fontVariationSettings: `'wght' ${weight}` })
-  }
+  };
 
   const hanldeMouseMove = (e) => {
     const { left } = container.getBoundingClientRect();
@@ -35,15 +35,15 @@ const setupTextHover = (container, type) => {
 
     letters.forEach((letter) => {
       const { left: l, width: w } = letter.getBoundingClientRect();
-      const distance = Math.abs(mouseX - (l - left + w / 2))
-      const intensity = Math.exp(-(distance ** 2) / 20000)
+      const distance = Math.abs(mouseX - (l - left + w / 2));
+      const intensity = Math.exp(-(distance ** 2) / 20000);
 
-      animateLetters(letter, min + (max - min) * intensity)
+      animateLetters(letter, min + (max - min) * intensity);
     })
-  }
+  };
 
   const handleMouseLeave = (e) => {
-    letters.forEach((letter) => animateLetters(letter, base, 0.3))
+    letters.forEach((letter) => animateLetters(letter, base, 0.3));
   }
 
   container.addEventListener("mousemove", hanldeMouseMove);
@@ -60,16 +60,16 @@ const Welcome = () => {
 
   useGSAP(() => {
     const titleCleanup = setupTextHover(titleRef.current, 'title');
-    const subtitleCleanup = setupTextHover(subtitleRef.current, 'subtitle')
+    const subtitleCleanup = setupTextHover(subtitleRef.current, 'subtitle');
 
     return () => {
       titleCleanup();
-      subtitleCleanup()
+      subtitleCleanup();
     }
   })
 
-  const titleRef = useRef(null)
-  const subtitleRef = useRef(null)
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
   return (
     <section id="welcome">
       <p ref={subtitleRef}>{ renderText("Hey, It's macOs welcome to my", 'text-3xl font-georama', 100)}</p>
@@ -84,4 +84,4 @@ const Welcome = () => {
   )
 }
 
-export default Welcome
+export default Welcome;

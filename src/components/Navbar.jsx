@@ -1,6 +1,6 @@
-import dayjs from "dayjs"
-import { navIcons, navLinks } from "#constants"
-import useWindowStore from "#store/window"
+import dayjs from "dayjs";
+import { navIcons, navLinks } from "#constants";
+import useWindowStore from "#store/window";
 
 
 const Navbar = () => {
@@ -37,4 +37,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
