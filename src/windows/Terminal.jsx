@@ -1,6 +1,6 @@
 import { WindowControls } from "#components/import";
 import { techStack } from "#constants";
-import WindowWraper from "#hoc/WindowWraper"
+import WindowWrapper from "#hoc/WindowWrapper"
 import { Check, Flag } from "lucide-react";
 
 const Terminal = () => {
@@ -42,7 +42,7 @@ const Terminal = () => {
         </p>
         <p className="text-black">
           <Flag size={15} fill="black" />
-          Render time: 5.6ms
+          Render time: 3.7ms
         </p>
       </div>
 
@@ -52,6 +52,6 @@ const Terminal = () => {
   )
 }
 
-const TerminalWindow = WindowWraper(Terminal, 'terminal');
+const TerminalWindow = WindowWrapper(Terminal, 'terminal');
 
 export default TerminalWindow;

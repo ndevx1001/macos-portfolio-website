@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { Draggable } from "gsap/all";
 import { useLayoutEffect, useRef } from "react";
 
-const WindowWraper = (Component, windowKey) => {
+const WindowWrapper = (Component, windowKey) => {
 
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
@@ -60,4 +60,4 @@ const WindowWraper = (Component, windowKey) => {
   return Wrapped;
 }
 
-export default WindowWraper
+export default WindowWrapper
